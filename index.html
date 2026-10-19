@@ -15,7 +15,7 @@
 <p>Wednesdays — 10:30 to 11:30am<br />
 <i>No need to attend every week; come when you can.</i></p>
 
-<div id="temp-location"
+<div id="temp-location" data-hide-on="2026-11-05"
 style="border: 2px solid red; margin: 1em auto; padding: 0 1em; max-width: fit-content;">
 <p><b>Temporary Location:</b><br>
 October 7 to November 4, 2026<br>
@@ -44,7 +44,7 @@ send us an email and we’ll add you to our list.</p>
 </div>
 
 
-<div id="upcoming-event"
+<div id="upcoming-event" data-hide-on="2026-11-12"
 style="border: 2px solid red; margin: 1em auto; padding: 0 1em; max-width: fit-content;">
 <p><b>Upcoming Event</b><br>
 Lay Entrustment Ceremony for our teacher Brian Taylor<br>
@@ -100,6 +100,13 @@ Lay Entrustment Ceremony for our teacher Brian Taylor<br>
 <p>His personal website is <a href="http://www.brianctaylor.net">brianctaylor.net</a></p>
 
 <p><b>Assisting facilitator is Corrales resident Chris Cadman,</b> also a long-time Zen practitioner, and like Brian, a continuing non-residential student through Ancient Dragon Zen Gate in Chicago.</p>
+
+<script>
+// Hide notices from midnight Mountain Time on their data-hide-on date.
+document.querySelectorAll("[data-hide-on]").forEach(function (el) {
+  if (Date.now() >= Date.parse(el.dataset.hideOn + "T00:00:00-07:00")) el.hidden = true;
+});
+</script>
 
 </body>
 </html>
